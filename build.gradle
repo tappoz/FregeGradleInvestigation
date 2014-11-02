@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile 'com.theoryinpractise.frege:frege:3.21.586-g026e8d7'
+
+}
+
+// java -Xss1m -jar lib/frege3.21.586-g026e8d7.jar -d src/main/java/build src/main/frege/HelloFrege.fr
+task xx {
+    ant.java(jar:"lib/frege3.21.586-g026e8d7.jar",fork:true) {
+        arg(value: "-d")
+        arg(value: "src/main/java/build")
+        arg(value: "src/main/frege/HelloFrege.fr")
+    }
+}
