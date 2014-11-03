@@ -1,6 +1,6 @@
-module HelloFrege where
+module org.tappoz.HelloFrege where
 
-greeting = "Hello Frege"
+greeting = "Hello World! Frege!"
 
 import Test.QuickCheck
 
