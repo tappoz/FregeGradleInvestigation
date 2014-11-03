@@ -1,4 +1,4 @@
-module org.tappoz.HelloFrege where
+module org.tappoz.frege.HelloFrege where
 
 greeting = "Hello World! Frege!"
 
