@@ -17,6 +17,8 @@ dependencies {
 
 }
 
+// cfr. the module definition in the Frege source code
+def generatedJavaCodePackage = new File('org/tappoz/frege')
 
 // To compile the Frege code use something like:
 // java -Xss1m -jar lib/frege3.21.586-g026e8d7.jar -d src/main/java/build src/main/frege/HelloFrege.fr
@@ -25,6 +27,9 @@ dependencies {
 // To read the help of the Frege command:
 // java -jar lib/frege3.21.586-g026e8d7.jar -help
 task generateJavaSrcFromFregeSrc {
+    // the following instruction is not needed (hence commented out) but may help in clarifying
+    // where the generated Java source code goes (Frege module "path" -> Java package "path")
+    //generatedJavaCodePackage.mkdirs()
     ant.java(jar:"lib/frege3.21.586-g026e8d7.jar",fork:true) {
         arg(value: "-j") // do not run the java compiler
         arg(value: "-d")
